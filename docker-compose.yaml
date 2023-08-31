@@ -13,6 +13,19 @@ services:
         ports:
             - '9306:3306'
 
+#    cakephp:
+#        build:
+#            dockerfile: php/Dockerfile
+#        container_name: cakephp
+#        working_dir: /application/webroot
+#        volumes:
+#            - ./:/application
+#        environment:
+#            - WEB_DOCUMENT_ROOT=/application/webroot
+#            - DATABASE_URL=mysql://my_app:secret@mysql/my_app
+#        ports:
+#            - "8099:80"
+#
     cakephp:
         build:
             dockerfile: php/Dockerfile
@@ -23,5 +36,15 @@ services:
         environment:
             - WEB_DOCUMENT_ROOT=/application/webroot
             - DATABASE_URL=mysql://my_app:secret@mysql/my_app
+#        ports:
+#            - "8099:80"
+
+    web:
+        image: httpd:2.4
+        volumes:
+            - ./:/application
         ports:
             - "8099:80"
+        environment:
+            - WEB_DOCUMENT_ROOT=/application/webroot
+            - DATABASE_URL=mysql://my_app:secret@mysql/my_app
