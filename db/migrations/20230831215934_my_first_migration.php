@@ -18,6 +18,6 @@ final class MyFirstMigration extends AbstractMigration
      */
     public function change(): void
     {
-        $this->table('test')->create();
+        $this->table('first')->create();
     }
 }
