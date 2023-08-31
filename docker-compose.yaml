@@ -40,7 +40,9 @@ services:
 #            - "8099:80"
 
     web:
-        image: httpd:2.4
+        build:
+            dockerfile: apache/Dockerfile
+#        image: httpd:2.4
         volumes:
             - ./:/application
         ports:
