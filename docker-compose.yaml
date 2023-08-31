@@ -50,3 +50,10 @@ services:
         environment:
             - WEB_DOCUMENT_ROOT=/application/webroot
             - DATABASE_URL=mysql://my_app:secret@mysql/my_app
+            - APACHE_RUN_USER=www-data
+            - APACHE_RUN_GROUP=www-data
+            - APACHE_PID_FILE=/var/run/apache2/apache2.pid
+            - APACHE_RUN_DIR=/var/run/apache2
+            - APACHE_LOCK_DIR=/var/lock/apache2
+            - APACHE_LOG_DIR=/var/log/apache2
+

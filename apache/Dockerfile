@@ -1,3 +1,4 @@
 FROM httpd:2.4
 
-COPY ./apache/conf/httpd.conf /usr/local/apache2/conf/httpd.conf
+#COPY ./apache/conf/httpd.conf /usr/local/apache2/conf/httpd.conf
+COPY ./apache/conf/ /usr/local/apache2/conf/
