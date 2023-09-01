@@ -6,12 +6,14 @@ namespace App\Test\TestCase\Model\Table;
 use App\Model\Table\FirstTable;
 use App\Test\Factory\FirstFactory;
 use Cake\TestSuite\TestCase;
+use CakephpTestSuiteLight\Fixture\TruncateDirtyTables;
 
 /**
  * App\Model\Table\FirstTable Test Case
  */
 class FirstTableTest extends TestCase
 {
+//    use TruncateDirtyTables;
     /**
      * Test subject
      *
@@ -53,6 +55,7 @@ class FirstTableTest extends TestCase
     }
 
     public function testIdExists() {
-        FirstFactory::make()->persist();
+        debug($this->First->find('all')->toArray());
+//        FirstFactory::make()->persist();
     }
 }

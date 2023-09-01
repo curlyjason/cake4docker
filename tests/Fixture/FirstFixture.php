@@ -25,7 +25,7 @@ class FirstFixture extends TestFixture
     {
         $this->records = [
             [
-                'id' => 1,
+                'id' => 999,
             ],
         ];
         parent::init();
