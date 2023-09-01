@@ -13,7 +13,7 @@ use CakephpTestSuiteLight\Fixture\TruncateDirtyTables;
  */
 class FirstTableTest extends TestCase
 {
-//    use TruncateDirtyTables;
+    use TruncateDirtyTables;
     /**
      * Test subject
      *
@@ -56,6 +56,6 @@ class FirstTableTest extends TestCase
 
     public function testIdExists() {
         debug($this->First->find('all')->toArray());
-//        FirstFactory::make()->persist();
+        FirstFactory::make()->persist();
     }
 }
