@@ -31,7 +31,6 @@ return
             'adapter' => 'mysql',
             'host' => '127.0.0.1',
             'name' => 'test_my_app',
-//            'name' => 'my_app',
             'user' => 'my_app',
             'pass' => 'secret',
             'port' => '9306',

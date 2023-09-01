@@ -25,3 +25,6 @@ services:
             - DATABASE_URL=mysql://my_app:secret@mysql/my_app
         ports:
             - "8099:80"
+
+#volumes:
+#    mysqldata:

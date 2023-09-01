@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Test\TestCase\Model\Table;
 
 use App\Model\Table\FirstTable;
+use App\Test\Factory\FirstFactory;
 use Cake\TestSuite\TestCase;
 
 /**
@@ -49,5 +50,9 @@ class FirstTableTest extends TestCase
         unset($this->First);
 
         parent::tearDown();
+    }
+
+    public function testIdExists() {
+        FirstFactory::make()->persist();
     }
 }
