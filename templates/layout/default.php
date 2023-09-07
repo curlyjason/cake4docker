@@ -14,7 +14,7 @@
  * @var \App\View\AppView $this
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
+$cakeDescription = 'CakePHP4x/PHP8.2 Dock';
 ?>
 <!DOCTYPE html>
 <html>
