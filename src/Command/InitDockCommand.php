@@ -51,7 +51,7 @@ class InitDockCommand extends Command
             $this->takeDockerDown($io, $count);
         }
         else {
-            $io->out('No option chosen. Specifiy "--up" or "--down".');
+            $io->out('No option chosen. Specify "--up" or "--down".');
         }
 //        exec(ROOT . '/bin/migrations.sh', $out, $status);
 //        $this->out($io, $count, $out, $status);
