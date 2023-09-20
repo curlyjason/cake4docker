@@ -10,6 +10,11 @@ use Cake\Console\ConsoleOptionParser;
 
 class EditYamlCommand extends Command
 {
+    private $filenames = [
+        'docker-compose_src.yaml',
+        'phinx_src.php',
+        'bin/db_setup_src.sh',
+    ];
     protected function buildOptionParser(ConsoleOptionParser $parser): ConsoleOptionParser
     {
         $parser
@@ -39,33 +44,42 @@ class EditYamlCommand extends Command
             return static::CODE_ERROR;
         }
 
-        $curr_dbport = '9306';
         $dbport = $args->getOption('dbport');
-        $curr_webport = '8099';
         $webport = $args->getOption('webport');
-        $curr_dbservice = 'mysql8';
-        $dbservice = $spn . '_' . $curr_dbservice;
-        $curr_webservice = 'cakephp';
-        $webservice = $spn . '_' . $curr_webservice;
-        $filename = 'docker-compose-test.yaml';
-        $file = file_get_contents(ROOT . '/' . $filename);
+        $dbservice = $spn . '_mysql';
+        $webservice = $spn . '_cakephp';
 
-        if (!$file) {
-            $io->out('No file found');
-        } else {
-            $file = str_replace($curr_dbport, $dbport, $file);
-            $file = str_replace($curr_webport, $webport, $file);
-            $file = str_replace($curr_dbservice, $dbservice, $file);
-            $file = str_replace($curr_webservice, $webservice, $file);
-            file_put_contents($filename, $file);
-            $io->out('File amended');
+        foreach ($this->filenames as $filename) {
+            $file = file_get_contents(ROOT . '/' . $filename);
+            $dest_filename = str_replace('_src', '', $filename);
+
+            if (!$file) {
+                $io->out("$filename not found");
+            } else {
+                $file = str_replace('[[db_port]]', $dbport, $file);
+                $file = str_replace('[[web_port]]', $webport, $file);
+                $file = str_replace('[[db_service]]', $dbservice, $file);
+                $file = str_replace('[[web_service]]', $webservice, $file);
+                file_put_contents($dest_filename, $file);
+                $io->out("$dest_filename amended");
+            }
         }
 
         return static::CODE_SUCCESS;
     }
 
-    private function replaceText($file, $search, $replace)
+    //edit phinx.php
+    //edit bin/db_setup.sh
+    //add exec method to execute BASH commands
+
+    private function replaceText($file, $search, $replace, $io)
     {
-        return str_replace();
+        if (!$file) {
+            $io->out('No file found');
+
+            return static::CODE_ERROR;
+        } else {
+            return str_replace($search, $replace, $file);
+        }
     }
 }
