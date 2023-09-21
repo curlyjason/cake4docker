@@ -13,7 +13,7 @@ services:
         ports:
             - '[[db_port]]:3306'
 
-      [[web_service]]:
+    [[web_service]]:
         build:
             dockerfile: php/Dockerfile
         container_name: [[web_service]]
@@ -22,7 +22,8 @@ services:
             - ./:/application
         environment:
             - WEB_DOCUMENT_ROOT=/application/webroot
-            - DATABASE_URL=mysql://my_app:secret@mysql/my_app
+            - DATABASE_URL=mysql://my_app:secret@[[db_service]]/my_app
+            - TEST_DATABASE_URL=mysql://root:root@[[db_service]]/my_app
         ports:
             - "[[web_port]]:80"
 
