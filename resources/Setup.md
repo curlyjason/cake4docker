@@ -8,9 +8,13 @@
 - Run `bin/db_setup.sh`
 - Run `bin/migration.sh`
 ## Edit the PHPStorm CLI
-  - Go to Settings / PHP
-  - Choose the three dots next to the CLI interpreter choice
-  - Select from Docker
-  - Choose Docker Compose
-  - Choose the name of the PHP container created for this project
-  - Apply / OK your way out
+  - Go to the menu `PhpStorm/Preferences...`
+  - Choose `> PHP`
+  - Set `PHP language level` as appropriate
+  - Choose the three dots next to the `CLI interpreter` choice
+  - Click `+` at the top of the left sidebar
+  - Select from `From Docker, Vagrant, VM, WSL, Remote...` (it will be the top, highlighted choice)
+  - Choose the `Docker Compose` radio button
+  - Choose the name of the PHP container created for this project from the `Service` dropdown and press the `OK` button to dismiss the dialog box
+    - In the `General` section press the 'respin' icon for `PHP executable`
+  - `Apply` / `OK` your way out of the dialog box stack
