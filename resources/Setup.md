@@ -16,7 +16,7 @@
   - Select from `From Docker, Vagrant, VM, WSL, Remote...` (it will be the top, highlighted choice)
   - Choose the `Docker Compose` radio button
   - Choose the name of the PHP container created for this project from the `Service` dropdown and press the `OK` button to dismiss the dialog box
-  - In the `General` section press the 'respin' icon for `PHP executable`
+  - In the `General` section press the 're-spin' icon for `PHP executable`
   - `Apply` / `OK` your way back to the main Preferences dialog
     - The preferences `PHP` pane, `Path mappings:` should include the path `<Project root>→/application;` for PhpUnit configuration to work
   ## PhpUnit Configuration in PhpStorm
