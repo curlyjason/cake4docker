@@ -24,7 +24,7 @@ class EditYamlCommand extends Command
             ->addOption('dbport', [
                 'short' => 'd',
                 'help' => 'Database port',
-                'default' => '9306',
+                'default' => '9010',
             ])
             ->addOption('webport', [
                 'short' => 'w',
