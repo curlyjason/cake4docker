@@ -25,6 +25,8 @@ services:
             - DATABASE_URL=mysql://my_app:secret@[[db_service]]/my_app
             - TEST_DATABASE_URL=mysql://root:root@[[db_service]]/my_app
             - SHORT_NAME=[[short_name]]
+            - WEB_PORT=[[web_port]]
+            - DB_PORT=[[db_port]]
         ports:
             - "[[web_port]]:80"
 

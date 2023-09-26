@@ -54,7 +54,7 @@ endif;
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-        <?= env('SHORT_NAME') ?>
+        <?= env('SHORT_NAME') . '/' . env('WEB_PORT') . '/' . env('DB_PORT') ?>
         <?= $this->fetch('title') ?>
     </title>
     <?= $this->Html->meta('icon') ?>
