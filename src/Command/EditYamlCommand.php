@@ -60,6 +60,7 @@ class EditYamlCommand extends Command
                 $file = str_replace('[[web_port]]', $webport, $file);
                 $file = str_replace('[[db_service]]', $dbservice, $file);
                 $file = str_replace('[[web_service]]', $webservice, $file);
+                $file = str_replace('[[short_name]]', $spn, $file);
                 file_put_contents($dest_filename, $file);
                 $io->out("$dest_filename amended");
             }
