@@ -14,7 +14,7 @@
  * @var \App\View\AppView $this
  */
 
-$cakeDescription = 'CakePHP4x/PHP8.2 Dock';
+$cakeDescription = env('SHORT_NAME');
 ?>
 <!DOCTYPE html>
 <html>

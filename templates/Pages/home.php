@@ -54,7 +54,7 @@ endif;
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-        CakePHP4x/PHP8.2 Dock
+        <?= env('SHORT_NAME') ?>
         <?= $this->fetch('title') ?>
     </title>
     <?= $this->Html->meta('icon') ?>
